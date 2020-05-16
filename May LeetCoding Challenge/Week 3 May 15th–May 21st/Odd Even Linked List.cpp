@@ -22,9 +22,7 @@ public:
         {
             odd->next=odd->next->next;
             if(even->next)
-            {
                 even->next=even->next->next; 
-            }
             even=even->next;
             odd=odd->next;
         }
