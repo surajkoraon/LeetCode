@@ -31,7 +31,6 @@ public:
             return root;
         tree->val=root->val;
         TreeNode* head=tree;
-        cout<<root->val<<" ";
         dfs(head,root);
         return tree;
     }
