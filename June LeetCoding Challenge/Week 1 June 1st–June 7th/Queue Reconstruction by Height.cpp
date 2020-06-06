@@ -23,8 +23,7 @@ public:
                 if(v[j][0]==-1 || v[j][0]>=people[i][0])
                     c--;
             }
-            v[c][0]=people[i][0];
-            v[c][1]=people[i][1];
+            v[c]=people[i];
         }
         return v;
     }
