@@ -1,33 +1,25 @@
 class Solution {
-public
-    int calculateMinimumHP(vectorvectorint& dungeon) {
-        if(dungeon.size()==0)
-            return 1;
-        int m=dungeon.size();
-        int n=dungeon[0].size();
-        int dp[m][n];
-        for(int i=m-1;i=0;i--)
+public:
+    int singleNumber(vector<int>& nums) {
+        int bit[32]={0};
+        for(int i:nums)
         {
-            for(int j=n-1;j=0;j--)
+            int n=i;
+            for(int j=0;j<32;j++)
             {
-                if(i==m-1 && j==n-1)
-                {
-                    dp[i][j]=dungeon[i][j];
-                }
-                else if(i==m-1)
-                {
-                    dp[i][j]=min(dungeon[i][j],dungeon[i][j]+dp[i][j+1]);
-                }
-                else if(j==n-1)
-                {
-                    dp[i][j]=min(dungeon[i][j],dungeon[i][j]+dp[i+1][j]);
-                }
-                else
-                {
-                    dp[i][j]=min(dungeon[i][j],dungeon[i][j]+max(dp[i+1][j],dp[i][j+1]));
-                }
+                bit[j]+=n&1;
+                n=n>>1;
+                if(!n)
+                    break;
             }
         }
-        return max(-dp[0][0]+1,1);
+        int res=0;
+        for(int i=0;i<32;i++)
+        {
+            int n=bit[i]%3;
+            if(n)
+                res+=n<<i;
+        }
+        return res;
     }
 };
