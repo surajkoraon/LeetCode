@@ -45,8 +45,6 @@ public:
             ListNode* c=new ListNode;
             while(1)
             {
-                cout<<fh->val<<endl;
-                //cout<<1<<endl;
                 c=fh;
                 a=fh->next;
                 b=rev->next;
