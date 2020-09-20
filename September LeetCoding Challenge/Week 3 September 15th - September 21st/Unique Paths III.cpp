@@ -7,21 +7,20 @@ public:
         {
             return;
         }
-        if(grid[x][y]==2 && total!=count)
-            return;
-        if(total>=count)
-            return;
         if(grid[x][y]==2 && total==count)
         {
             sol++;
             return;
         }
+        if(grid[x][y]==2 && total!=count)
+            return;
+        if(total>=count)
+            return;
         grid[x][y]=-1;
         dfs(x+1,y,grid,count,total+1);
         dfs(x-1,y,grid,count,total+1);
         dfs(x,y+1,grid,count,total+1);
         dfs(x,y-1,grid,count,total+1);
-        //visited[x][y]=false;
         grid[x][y]=0;
     }
     int uniquePathsIII(vector<vector<int>>& grid) {
