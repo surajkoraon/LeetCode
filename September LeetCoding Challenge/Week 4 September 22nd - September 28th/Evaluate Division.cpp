@@ -36,7 +36,6 @@ public:
                 unordered_map<string,bool> visited;
                 dfs(sol,1,source,destination,visited);
             }
-            cout<<sol<<"->"<<i<<endl;
             v.push_back(sol);
         }
         return v;
