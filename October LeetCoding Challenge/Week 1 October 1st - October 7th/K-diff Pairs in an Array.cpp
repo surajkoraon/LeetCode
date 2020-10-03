@@ -9,16 +9,10 @@ public:
             m[nums[i]]=i;
         for(int i=0;i<nums.size();i++)
         {
-            if(m.count(nums[i]-k)>0 && m[nums[i]-k]!=i)
-            {
-                a=nums[i]-k;
-                b=nums[i];
-                s[a]=b;
-            }
             if(m.count(nums[i]+k)>0 && m[nums[i]+k]!=i)
             {
-                a=nums[i];
-                b=nums[i]+k;
+                a=nums[i]+k;
+                b=nums[i];
                 s[a]=b;
             }
         }
