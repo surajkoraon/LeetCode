@@ -12,7 +12,6 @@ public:
         v.push_back(temp);
         for(int i=1;i<n-1;i++)
         {
-            cout<<temp<<" and "<<nums[i]<<endl;
             if(nums[i]-1!=temp)
             {
                 v.push_back(temp);
@@ -20,7 +19,6 @@ public:
             }
             temp=nums[i];
         }
-        cout<<temp<<" and "<<nums[n-1]<<endl;
         if(nums[n-1]-1!=temp)
         {
             v.push_back(temp);
