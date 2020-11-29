@@ -14,6 +14,6 @@ public:
         if(v[index]!=-1)
             return v[index];
         v[index]=0;
-        return DFS(arr,v,index+arr[index]) ||DFS(arr,v,index-arr[index]);
+        return DFS(arr,v,index+arr[index]) || DFS(arr,v,index-arr[index]);
     }
 };
